@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesi Berakhir - WargaNet Hotspot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Top Community Status Bar -->
+    <header class="app-header">
+        <div class="header-title-wrapper">
+            <div class="header-badge-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;">
+                    <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                    <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                </svg>
+            </div>
+            <div class="header-meta">
+                <span class="header-brand-name">WargaNet Hotspot</span>
+                <span class="header-rt-sub">WiFi Perumahan & Lingkungan RT/RW</span>
+            </div>
+        </div>
+        <div class="header-status-pill" style="color: #cbd5e1; border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1);">
+            OFFLINE
+        </div>
+    </header>
+
+    <!-- Running Text Ticker -->
+    <div class="marquee-container">
+        <span class="marquee-tag">TERIMA KASIH</span>
+        <div class="marquee-track">
+            <div class="marquee-text">Sesi telah selesai | Silakan hubungkan kembali kapan saja untuk menikmati WiFi warga!</div>
+        </div>
+    </div>
+
+    <!-- Arched Hero Carousel -->
+    <div class="hero-wrapper">
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+                <img src="sembako-bg.png" alt="Sesi Berakhir" class="carousel-image">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content">
+                    <span class="hero-pill-badge">👋 Sampai Jumpa</span>
+                    <h2 class="hero-title">Terima Kasih Telah Terhubung</h2>
+                    <p class="hero-desc">Koneksi internet Anda telah berhasil diputuskan secara aman</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Elevated Main Status Card -->
+    <main class="main-card">
+        <!-- Card Greeting Header -->
+        <div class="card-intro">
+            <h3 class="card-intro-title">Sesi <span>Telah Selesai</span></h3>
+            <p class="card-intro-sub">Rincian penggunaan akses WiFi Anda</p>
+        </div>
+
+        <!-- Receipt Table -->
+        <div class="receipt-table" style="margin-bottom: 20px;">
+            <div class="receipt-row">
+                <span class="receipt-label">Pengguna</span>
+                <span class="receipt-value">$(username)</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">Total Uptime</span>
+                <span class="receipt-value highlight">$(uptime)</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">Status Sambungan</span>
+                <span class="receipt-value" style="color: var(--c-text-muted);">Terputus</span>
+            </div>
+        </div>
+
+        <!-- Return button -->
+        <a href="$(link-login)" class="btn-primary" style="text-decoration: none;">
+            Masuk Kembali
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+            </svg>
+        </a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="brand-footer" style="margin-top: auto;">
+        &copy; 2026 WargaNet Hotspot Perumahan. All Rights Reserved.
+    </footer>
+</div>
+
+</body>
+</html>

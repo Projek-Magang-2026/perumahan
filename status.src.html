@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Terhubung - WargaNet Hotspot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initStatusPage()">
+
+<div class="app-container">
+    <!-- Top Community Status Bar -->
+    <header class="app-header">
+        <div class="header-title-wrapper">
+            <div class="header-badge-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;">
+                    <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                    <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                </svg>
+            </div>
+            <div class="header-meta">
+                <span class="header-brand-name">WargaNet Hotspot</span>
+                <span class="header-rt-sub">WiFi Perumahan & Lingkungan RT/RW</span>
+            </div>
+        </div>
+        <div class="header-status-pill">
+            <span class="status-dot"></span>
+            TERHUBUNG
+        </div>
+    </header>
+
+    <!-- Running Text Ticker -->
+    <div class="marquee-container">
+        <span class="marquee-tag">STATUS</span>
+        <div class="marquee-track">
+            <div class="marquee-text">Koneksi aktif | Kecepatan optimal | Selamat menikmati layanan WiFi lingkungan perumahan warga!</div>
+        </div>
+    </div>
+
+    <!-- Arched Hero Carousel -->
+    <div class="hero-wrapper">
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+                <img src="sembako-bg.png" alt="Status Terhubung" class="carousel-image">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content">
+                    <span class="hero-pill-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width: 11px; height: 11px; color: #6ee7b7;">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                        </svg>
+                        Status Aktif
+                    </span>
+                    <h2 class="hero-title">Selamat Menikmati Akses Internet</h2>
+                    <p class="hero-desc">Perangkat Anda telah tersambung dengan jaringan warga</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="sembako-bg-2.png" alt="Aktivitas Warga" class="carousel-image">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content">
+                    <span class="hero-pill-badge">☕ Lingkungan Nyaman</span>
+                    <h2 class="hero-title">Internetan Lancar & Stabil</h2>
+                    <p class="hero-desc">Bebas browsing, belajar, dan hiburan di seluruh area</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="sembako-bg-3.png" alt="Voucher Hemat" class="carousel-image">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content">
+                    <span class="hero-pill-badge">⚡ Jaga Bersama</span>
+                    <h2 class="hero-title">Gunakan Jaringan Secara Bijak</h2>
+                    <p class="hero-desc">Kenyamanan bersama adalah prioritas seluruh warga</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="carousel-indicators">
+            <span class="carousel-dot active"></span>
+            <span class="carousel-dot"></span>
+            <span class="carousel-dot"></span>
+        </div>
+    </div>
+
+    <!-- Elevated Main Status Card -->
+    <main class="main-card">
+        <!-- Card Greeting Header -->
+        <div class="card-intro">
+            <h3 class="card-intro-title">Rincian <span>Koneksi Aktif</span></h3>
+            <p class="card-intro-sub">Informasi kuota dan masa aktif Anda</p>
+        </div>
+
+        <!-- Receipt Table -->
+        <div class="receipt-table">
+            <div class="receipt-row">
+                <span class="receipt-label">Pengguna / Voucher</span>
+                <span class="receipt-value highlight" id="stat-username">$(username)</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">Alamat IP</span>
+                <span class="receipt-value" id="stat-ip">$(ip)</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">MAC Address</span>
+                <span class="receipt-value" id="stat-mac">$(mac)</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">Tipe Akses</span>
+                <span class="receipt-value highlight" id="stat-type">Voucher</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">Unggah / Unduh</span>
+                <span class="receipt-value">$(bytes-in-nice) / $(bytes-out-nice)</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">Waktu Aktif</span>
+                <span class="receipt-value highlight" id="stat-uptime">$(uptime)</span>
+            </div>
+            <div class="receipt-row">
+                <span class="receipt-label">Sisa Kuota</span>
+                <span class="receipt-value highlight">$(limit-bytes-out) / 10 GB</span>
+            </div>
+        </div>
+
+        <!-- Disconnect Form -->
+        <form action="$(link-logout)" name="logout" id="logout-form">
+            <input type="hidden" name="erase-cookie" value="true" />
+            <button type="submit" class="btn-primary" style="background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%); box-shadow: 0 4px 14px rgba(197, 48, 48, 0.28);">
+                Putuskan Sambungan
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1012.728 0M12 3v9" />
+                </svg>
+            </button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="brand-footer">
+        &copy; 2026 WargaNet Hotspot Perumahan. All Rights Reserved.
+    </footer>
+
+    <!-- Fixed Bottom Navbar -->
+    <nav class="bottom-nav">
+        <a class="nav-item active" href="status.html">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+            Status
+        </a>
+        <a class="nav-item" onclick="alert('Hubungi Pengurus / Admin WiFi Lingkungan Perumahan jika membutuhkan bantuan atau perpanjangan kupon!')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9.75h7.5M8.25 12h7.5M8.25 14.25h5.25" />
+            </svg>
+            Kontak
+        </a>
+        <div class="nav-scan-wrapper">
+            <div id="nav-scan-btn" class="nav-scan-btn" title="Scan QR Voucher">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+                </svg>
+            </div>
+            <span class="nav-scan-label">Scan QR</span>
+        </div>
+        <a class="nav-item" onclick="alert('Panduan:\nUntuk menyudahi koneksi atau memindahkan voucher ke perangkat lain, silakan klik tombol Putuskan Sambungan.')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+            </svg>
+            Bantuan
+        </a>
+        <a class="nav-item" onclick="alert('WargaNet Hotspot Perumahan v2.0\nLayanan internet komunitas warga RT/RW & Perumahan\nCepat, hemat, dan ramah lingkungan')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.43l-1.003.828c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.43l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            Profil
+        </a>
+    </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

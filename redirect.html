@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghubungkan... - WargaNet Hotspot</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="2; url=$(link-redirect)">
+    <script>
+        function doRedirect() {
+            setTimeout(function() {
+                const isLocal = window.location.hostname === 'localhost' || 
+                                window.location.hostname === '127.0.0.1' || 
+                                window.location.protocol === 'file:';
+                if (isLocal) {
+                    window.location.href = "status.html";
+                } else {
+                    window.location.href = "$(link-redirect)";
+                }
+            }, 1800);
+        }
+    </script>
+</head>
+<body onload="doRedirect()">
+
+<div class="app-container" style="justify-content: center; align-items: center; padding: 20px;">
+    <!-- Elevated Card -->
+    <main class="main-card" style="margin: 0; width: 100%; border: 1px solid var(--c-border); border-radius: var(--radius-lg); padding: 36px 20px; text-align: center;">
+        
+        <div class="card-intro" style="margin-bottom: 20px;">
+            <h3 class="card-intro-title">Menghubungkan ke <span>WiFi</span></h3>
+            <p class="card-intro-sub">Sedang mengaktifkan akses internet lingkungan Anda...</p>
+        </div>
+
+        <!-- Loading Dots -->
+        <div class="loading-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <p style="font-size: 11px; color: var(--c-text-muted); font-weight: 600; margin-top: 14px;">
+            Jika tidak berpindah otomatis, <a href="status.html" style="color: var(--c-forest-700); text-decoration: underline; font-weight: 800;">klik di sini</a>.
+        </p>
+    </main>
+</div>
+
+</body>
+</html>

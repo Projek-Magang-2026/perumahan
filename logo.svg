@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" fill="none">
+  <!-- Subtle circular shield background -->
+  <rect x="6" y="6" width="88" height="88" rx="24" fill="#1b4d3e" />
+  <rect x="8" y="8" width="84" height="84" rx="22" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+  
+  <!-- WiFi Signal Arcs above the house -->
+  <!-- Outer Signal Wave -->
+  <path d="M26 34 A34 34 0 0 1 74 34" stroke="#f4efe6" stroke-width="3.5" stroke-linecap="round" opacity="0.45" />
+  <!-- Middle Signal Wave -->
+  <path d="M34 42 A22 22 0 0 1 66 42" stroke="#f4efe6" stroke-width="3.5" stroke-linecap="round" opacity="0.75" />
+  <!-- Inner Signal Wave -->
+  <path d="M42 50 A11 11 0 0 1 58 50" stroke="#52b788" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Community House Roof & Base -->
+  <!-- Roof Outline / Canopy -->
+  <path d="M22 62 L50 40 L78 62" stroke="#f4efe6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- House Body -->
+  <path d="M30 60 L30 78 C30 80 32 82 34 82 L66 82 C68 82 70 80 70 78 L70 60" fill="#246a48" stroke="#f4efe6" stroke-width="2" stroke-linejoin="round" />
+  
+  <!-- Welcoming Open Door -->
+  <path d="M44 82 L44 68 C44 65.5 46.5 64 50 64 C53.5 64 56 65.5 56 68 L56 82 Z" fill="#f4efe6" />
+  
+  <!-- Central Community Beacon Dot -->
+  <circle cx="50" cy="56" r="2.5" fill="#52b788" />
+</svg>

@@ -1,0 +1,1039 @@
+/* ===================================================================
+   WARGANET - HOTSPOT PORTAL PERUMAHAN & KAMPUNG PADAT
+   Visual Style: Warm Community Modernism (Forest Sage, Clay Terracotta, Warm Sand & Linen)
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    /* Brand Color Palette: Perumahan & Lingkungan */
+    --c-forest-900: #0f3020;
+    --c-forest-800: #16462e;
+    --c-forest-700: #1e5a3c;
+    --c-forest-600: #297750;
+    --c-forest-500: #369b6a;
+    --c-forest-100: #e4f2ea;
+    --c-forest-50:  #f0f8f3;
+
+    /* Clay & Terracotta Warm Accents (Genteng & Bata Perumahan) */
+    --c-clay-600:   #b85028;
+    --c-clay-500:   #cf6134;
+    --c-clay-100:   #faece6;
+    
+    /* Warm Sand, Cream & Canvas Backgrounds */
+    --c-canvas:     #f5f2eb;
+    --c-surface:    #ffffff;
+    --c-sand-50:    #fcfbf8;
+    --c-sand-100:   #f6f2e8;
+    --c-sand-200:   #eee8dc;
+    --c-sand-300:   #e0d7c7;
+
+    /* Typography Charcoal */
+    --c-text-title: #132219;
+    --c-text-body:  #3d4e43;
+    --c-text-muted: #728478;
+    --c-border:     #e3dcce;
+    --c-border-subtle: #ede7dc;
+
+    /* Border Radii */
+    --radius-xs: 6px;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+    --radius-pill: 9999px;
+
+    /* Custom Shadows */
+    --shadow-card: 0 10px 30px -5px rgba(19, 48, 32, 0.08), 0 2px 6px rgba(19, 48, 32, 0.03);
+    --shadow-btn: 0 6px 18px rgba(22, 70, 46, 0.28);
+    --shadow-btn-hover: 0 10px 24px rgba(22, 70, 46, 0.38);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--c-canvas);
+    font-size: 14px;
+}
+
+body {
+    background-color: var(--c-canvas);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--c-text-body);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 74px; /* Space for fixed bottom bar */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===================================================================
+   MAIN MOBILE APP FRAME
+   =================================================================== */
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--c-sand-50);
+    position: relative;
+    box-shadow: 0 0 45px rgba(20, 36, 26, 0.09);
+}
+
+/* ===================================================================
+   TOP COMMUNITY STATUS BAR (Griya & RT Information)
+   =================================================================== */
+.app-header {
+    background: linear-gradient(135deg, var(--c-forest-900) 0%, var(--c-forest-800) 100%);
+    color: #ffffff;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 40;
+}
+
+.header-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-badge-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a3e6c5;
+    flex-shrink: 0;
+}
+
+.header-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-brand-name {
+    font-size: 13.5px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.header-rt-sub {
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #a7d8be;
+    letter-spacing: 0.3px;
+}
+
+.header-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    background: rgba(41, 119, 80, 0.35);
+    color: #6ee7b7;
+    border: 1px solid rgba(110, 231, 183, 0.35);
+    letter-spacing: 0.5px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #34d399;
+    box-shadow: 0 0 6px #34d399;
+    animation: live-pulse 2s infinite ease-in-out;
+}
+
+@keyframes live-pulse {
+    0%, 100% { opacity: 0.6; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* ===================================================================
+   HERO ARCH BANNER (Perumahan & Kampung Neighborhood)
+   =================================================================== */
+.hero-wrapper {
+    position: relative;
+    background-color: var(--c-forest-900);
+}
+
+.carousel-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55) contrast(1.1);
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(15, 48, 32, 0.2) 0%, rgba(15, 40, 26, 0.8) 100%);
+    z-index: 2;
+}
+
+.carousel-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 20px 32px;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.hero-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 6px;
+    color: #ffffff;
+    width: fit-content;
+}
+
+.hero-title {
+    font-size: 17.5px;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3px;
+}
+
+.hero-desc {
+    font-size: 11px;
+    font-weight: 500;
+    color: #e5f2ea;
+    line-height: 1.35;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Minimalist Dot Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-pill);
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    width: 20px;
+    background-color: #ffffff;
+}
+
+/* ===================================================================
+   RUNNING TEXT TICKER
+   =================================================================== */
+.marquee-container {
+    background-color: var(--c-sand-100);
+    color: var(--c-forest-900);
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--c-border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-tag {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--c-forest-700);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: var(--radius-xs);
+    letter-spacing: 0.5px;
+    z-index: 5;
+}
+
+.marquee-track {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--c-text-body);
+    animation: ticker-scroll 22s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes ticker-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* ===================================================================
+   ELEVATED LOGIN CARD (Overlapping Floating Architecture)
+   =================================================================== */
+.main-card {
+    flex: 1;
+    margin: -20px 14px 18px;
+    padding: 22px 18px;
+    background-color: var(--c-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--c-border);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Segmented Tab Mode Selector */
+.tab-switcher {
+    display: flex;
+    background-color: var(--c-sand-100);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 3px;
+    margin-bottom: 18px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    font-weight: 800;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--c-text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+.tab-btn.active {
+    background-color: #ffffff;
+    color: var(--c-forest-800);
+    box-shadow: 0 2px 8px rgba(15, 48, 32, 0.08);
+}
+
+.tab-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* Header greeting inside Card */
+.card-intro {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.card-intro-title {
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--c-text-title);
+    letter-spacing: -0.3px;
+}
+
+.card-intro-title span {
+    color: var(--c-forest-700);
+}
+
+.card-intro-sub {
+    font-size: 11px;
+    color: var(--c-text-muted);
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+/* ===================================================================
+   FORM INPUTS & LABELS
+   =================================================================== */
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.form-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--c-text-body);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.form-label-hint {
+    font-size: 10px;
+    color: var(--c-forest-600);
+    font-weight: 700;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    color: var(--c-text-muted);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.input-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.input-field {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px 0 44px;
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--c-text-title);
+    outline: none;
+    background-color: var(--c-sand-50);
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.input-field:focus {
+    background-color: #ffffff;
+    border-color: var(--c-forest-600);
+    box-shadow: 0 0 0 3.5px rgba(41, 119, 80, 0.12);
+}
+
+.input-wrapper:focus-within .input-icon {
+    color: var(--c-forest-700);
+}
+
+.uppercase-input {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.eye-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--c-text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    outline: none;
+    border-radius: var(--radius-xs);
+    transition: color 0.2s;
+}
+
+.eye-toggle:hover {
+    color: var(--c-forest-700);
+}
+
+/* ===================================================================
+   PRIMARY ACTION BUTTON
+   =================================================================== */
+.btn-primary {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, var(--c-forest-700) 0%, var(--c-forest-900) 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: var(--shadow-btn);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 0.3px;
+    font-family: inherit;
+    margin-top: 4px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--c-forest-600) 0%, var(--c-forest-800) 100%);
+    box-shadow: var(--shadow-btn-hover);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(15, 48, 32, 0.2);
+}
+
+.btn-primary svg {
+    width: 17px;
+    height: 17px;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover svg {
+    transform: translateX(3px);
+}
+
+/* Instant QR Action Banner */
+.qr-quick-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px 14px;
+    background-color: var(--c-sand-100);
+    border: 1px dashed var(--c-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--c-forest-800);
+    font-size: 11.5px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.qr-quick-btn:hover {
+    background-color: var(--c-forest-50);
+    border-color: var(--c-forest-500);
+    color: var(--c-forest-700);
+}
+
+.qr-quick-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ===================================================================
+   VOUCHER TICKET PACKAGES (Perforated Card Style)
+   =================================================================== */
+.packages-section {
+    margin: 10px 14px 16px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 0 4px;
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--c-text-title);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.section-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--c-clay-600);
+    background-color: var(--c-clay-100);
+    padding: 2px 7px;
+    border-radius: var(--radius-xs);
+}
+
+.packages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ticket-card {
+    background-color: #ffffff;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(19, 48, 32, 0.03);
+    transition: all 0.2s ease;
+}
+
+.ticket-card:hover {
+    border-color: var(--c-forest-500);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(19, 48, 32, 0.06);
+}
+
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ticket-name {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--c-text-title);
+}
+
+.ticket-meta {
+    font-size: 10px;
+    color: var(--c-text-muted);
+    font-weight: 600;
+}
+
+.ticket-price {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--c-forest-800);
+    background-color: var(--c-sand-100);
+    padding: 4px 10px;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--c-border);
+}
+
+/* ===================================================================
+   WARUNG & COMMUNITY INFO CARD
+   =================================================================== */
+.community-card {
+    margin: 0 14px 14px;
+    background-color: var(--c-sand-100);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.community-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background-color: var(--c-forest-100);
+    color: var(--c-forest-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.community-icon-box svg {
+    width: 19px;
+    height: 19px;
+}
+
+.community-text-box {
+    flex: 1;
+}
+
+.community-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--c-text-title);
+    margin-bottom: 2px;
+}
+
+.community-desc {
+    font-size: 10px;
+    color: var(--c-text-muted);
+    line-height: 1.35;
+}
+
+/* ===================================================================
+   STATUS / RECEIPT TABLE
+   =================================================================== */
+.receipt-table {
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background-color: var(--c-sand-50);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    border-bottom: 1px dashed var(--c-border);
+    padding-bottom: 8px;
+}
+
+.receipt-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.receipt-label {
+    font-weight: 600;
+    color: var(--c-text-muted);
+}
+
+.receipt-value {
+    font-weight: 800;
+    color: var(--c-text-title);
+    text-align: right;
+}
+
+.receipt-value.highlight {
+    color: var(--c-forest-700);
+}
+
+/* ===================================================================
+   ALERT & ERROR BOX
+   =================================================================== */
+.error-box {
+    background-color: #fff5f5;
+    border: 1px solid #fed7d7;
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    color: #9b2c2c;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===================================================================
+   CLEAN ATTACHED BOTTOM NAVIGATION BAR (Fixed Viewport)
+   =================================================================== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 420px;
+    height: 58px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 99999;
+    box-shadow: 0 -2px 14px rgba(15, 48, 32, 0.08);
+    padding: 0 6px;
+    border-top: 1px solid var(--c-border);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--c-text-muted);
+    text-decoration: none;
+    font-size: 9.5px;
+    font-weight: 700;
+    gap: 3px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    flex: 1;
+    height: 100%;
+}
+
+.nav-item.active, .nav-item:hover {
+    color: var(--c-forest-800);
+}
+
+.nav-item.active svg {
+    color: var(--c-forest-700);
+}
+
+.nav-item svg {
+    width: 19px;
+    height: 19px;
+    transition: transform 0.2s ease;
+}
+
+.nav-item:active svg {
+    transform: scale(0.9);
+}
+
+/* Center Integrated Scan Pill / Action Button */
+.nav-scan-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+    gap: 2px;
+}
+
+.nav-scan-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--c-forest-700) 0%, var(--c-forest-800) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(22, 70, 46, 0.25);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-scan-btn:hover {
+    transform: scale(1.06);
+    background: linear-gradient(135deg, var(--c-forest-600) 0%, var(--c-forest-700) 100%);
+}
+
+.nav-scan-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.nav-scan-label {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: var(--c-forest-800);
+    line-height: 1;
+}
+
+/* ===================================================================
+   BRAND FOOTER
+   =================================================================== */
+.brand-footer {
+    text-align: center;
+    padding: 12px 14px 18px;
+    font-size: 9.5px;
+    color: var(--c-text-muted);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+/* ===================================================================
+   LOADING DOTS
+   =================================================================== */
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin: 24px 0;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    background-color: var(--c-forest-700);
+    border-radius: 50%;
+    animation: dot-bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dot-bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* ===================================================================
+   QR MODAL
+   =================================================================== */
+.scanner-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 35, 25, 0.72);
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.scanner-modal-content {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 320px;
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--c-border);
+}
+
+.scanner-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--c-border);
+}
+
+.scanner-modal-header h3 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--c-forest-800);
+}
+
+.close-scanner-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: var(--c-text-muted);
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.scanner-guide-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 4px 0 14px;
+}
+
+.guide-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.guide-step-number {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--c-forest-800);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.guide-step-text strong {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--c-text-title);
+}
+
+.guide-step-text p {
+    font-size: 10px;
+    color: var(--c-text-muted);
+    line-height: 1.35;
+}
+
+.guide-footer-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

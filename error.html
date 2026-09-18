@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendala Koneksi - WargaNet Hotspot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container" style="justify-content: center; align-items: center; padding: 20px;">
+    <!-- Elevated Card -->
+    <main class="main-card" style="margin: 0; width: 100%; border: 1px solid var(--c-border); border-radius: var(--radius-lg); padding: 32px 20px; text-align: center;">
+        
+        <div style="width: 48px; height: 48px; border-radius: 50%; background-color: #fef2f2; color: #dc2626; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; border: 1px solid #fee2e2;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" style="width: 24px; height: 24px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+            </svg>
+        </div>
+        
+        <div class="card-intro">
+            <h3 class="card-intro-title" style="color: #991b1b;">Sambungan Gagal</h3>
+            <p class="card-intro-sub">Terjadi kendala saat menghubungkan ke WiFi Warga</p>
+        </div>
+
+        <!-- Error Box -->
+        <div class="error-box" style="margin-bottom: 20px;">
+            <span>⚠️</span>
+            <div>
+                <strong>Keterangan:</strong><br>
+                <span>$(error-message)</span>
+            </div>
+        </div>
+
+        <!-- Return button -->
+        <a href="login.html" class="btn-primary" style="text-decoration: none;">
+            Kembali ke Halaman Masuk
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+            </svg>
+        </a>
+
+        <!-- Footer -->
+        <footer class="brand-footer" style="margin-top: 24px;">
+            &copy; 2026 WargaNet Hotspot Perumahan.
+        </footer>
+    </main>
+</div>
+
+</body>
+</html>
